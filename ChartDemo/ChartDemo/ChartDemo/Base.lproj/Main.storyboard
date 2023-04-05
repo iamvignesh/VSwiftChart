@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="WfM-PT-CnW">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Tab Bar Controller-->
+        <scene sceneID="NMA-j5-6jF">
+            <objects>
+                <tabBarController id="WfM-PT-CnW" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="7HJ-rN-nOO">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="FL2-OV-gFm"/>
+                        <segue destination="3Vi-qo-8V8" kind="relationship" relationship="viewControllers" id="MzT-Wf-neS"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="PCg-f1-c9e" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2170" y="-61"/>
+        </scene>
+        <!--Item 1-->
+        <scene sceneID="hSA-UE-wD7">
+            <objects>
+                <viewController id="3Vi-qo-8V8" customClass="ViewController2" customModule="ChartDemo" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="UWL-ly-b04">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bsx-nz-hTC" customClass="PieChart" customModule="ChartLib">
+                                <rect key="frame" x="20" y="76" width="374" height="224"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="224" id="Yu1-Kd-vGt"/>
+                                </constraints>
+                            </view>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4Tm-q1-8Wp">
+                                <rect key="frame" x="20" y="37" width="51" height="31"/>
+                                <connections>
+                                    <action selector="onoptionswitched:" destination="3Vi-qo-8V8" eventType="valueChanged" id="kPN-n4-WTb"/>
+                                </connections>
+                            </switch>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="C4N-7O-fPf">
+                                <rect key="frame" x="343" y="37" width="51" height="31"/>
+                                <connections>
+                                    <action selector="isOrdererdSwitched:" destination="3Vi-qo-8V8" eventType="valueChanged" id="GUb-jo-A3c"/>
+                                </connections>
+                            </switch>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VcC-vT-Vkk" customClass="BubbleChart" customModule="ChartLib">
+                                <rect key="frame" x="20" y="400" width="374" height="373"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="OMg-kU-zOJ"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="OMg-kU-zOJ" firstAttribute="trailing" secondItem="C4N-7O-fPf" secondAttribute="trailing" constant="22" id="7J7-Qb-Heh"/>
+                            <constraint firstItem="OMg-kU-zOJ" firstAttribute="bottom" secondItem="VcC-vT-Vkk" secondAttribute="bottom" constant="40" id="ADZ-0O-Pi6"/>
+                            <constraint firstItem="VcC-vT-Vkk" firstAttribute="top" secondItem="bsx-nz-hTC" secondAttribute="bottom" constant="100" id="G9l-RJ-rsD"/>
+                            <constraint firstItem="OMg-kU-zOJ" firstAttribute="trailing" secondItem="bsx-nz-hTC" secondAttribute="trailing" constant="20" id="J2i-8F-ZIf"/>
+                            <constraint firstItem="bsx-nz-hTC" firstAttribute="top" secondItem="OMg-kU-zOJ" secondAttribute="top" constant="32" id="Jvu-sL-oBx"/>
+                            <constraint firstItem="4Tm-q1-8Wp" firstAttribute="leading" secondItem="OMg-kU-zOJ" secondAttribute="leading" constant="20" id="M4M-9P-jWp"/>
+                            <constraint firstItem="VcC-vT-Vkk" firstAttribute="trailing" secondItem="bsx-nz-hTC" secondAttribute="trailing" id="MPE-cz-MAq"/>
+                            <constraint firstItem="C4N-7O-fPf" firstAttribute="top" secondItem="UWL-ly-b04" secondAttribute="top" constant="37" id="Pbb-uE-wdn"/>
+                            <constraint firstItem="4Tm-q1-8Wp" firstAttribute="top" secondItem="UWL-ly-b04" secondAttribute="top" constant="37" id="a1Z-OI-ZUZ"/>
+                            <constraint firstItem="bsx-nz-hTC" firstAttribute="leading" secondItem="OMg-kU-zOJ" secondAttribute="leading" constant="20" id="hNa-NC-sw2"/>
+                            <constraint firstItem="VcC-vT-Vkk" firstAttribute="leading" secondItem="bsx-nz-hTC" secondAttribute="leading" id="osX-UV-gsQ"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Item 1" id="55z-3F-T93"/>
+                    <connections>
+                        <outlet property="bubbleChart" destination="VcC-vT-Vkk" id="pop-Xj-guR"/>
+                        <outlet property="isOrderedSwitch" destination="C4N-7O-fPf" id="jRU-cp-iDe"/>
+                        <outlet property="optionSwitch" destination="4Tm-q1-8Wp" id="zGK-i1-yvR"/>
+                        <outlet property="pieChart" destination="bsx-nz-hTC" id="UbW-i5-Z5F"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jBy-UY-J84" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-914.49275362318849" y="-759.375"/>
+        </scene>
+        <!--Item-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="ChartDemo" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fd2-3L-8J3">
+                                <rect key="frame" x="20" y="44" width="51" height="31"/>
+                                <connections>
+                                    <action selector="onoptionswitched:" destination="BYZ-38-t0r" eventType="valueChanged" id="rRP-aP-c9U"/>
+                                </connections>
+                            </switch>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5ie-g7-83Z">
+                                <rect key="frame" x="335" y="44" width="51" height="31"/>
+                                <connections>
+                                    <action selector="isOrdererdSwitched:" destination="BYZ-38-t0r" eventType="valueChanged" id="NAl-9H-ubD"/>
+                                </connections>
+                            </switch>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Is Ordered" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RFY-xW-mc6">
+                                <rect key="frame" x="233" y="49" width="80" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qyg-er-KzR" customClass="BarChart" customModule="ChartLib">
+                                <rect key="frame" x="20" y="128" width="374" height="179.5"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kQC-fY-Euf" customClass="LineChart" customModule="ChartLib">
+                                <rect key="frame" x="20" y="347.5" width="374" height="179.5"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tRn-UJ-ZYv" customClass="StackedBarChart" customModule="ChartLib">
+                                <rect key="frame" x="20" y="567" width="374" height="226"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="5ie-g7-83Z" secondAttribute="trailing" constant="30" id="20U-ih-UKG"/>
+                            <constraint firstItem="kQC-fY-Euf" firstAttribute="leading" secondItem="qyg-er-KzR" secondAttribute="leading" id="2kx-1r-uwg"/>
+                            <constraint firstItem="5ie-g7-83Z" firstAttribute="leading" secondItem="RFY-xW-mc6" secondAttribute="trailing" constant="22" id="9ZN-T8-KzS"/>
+                            <constraint firstItem="kQC-fY-Euf" firstAttribute="height" secondItem="qyg-er-KzR" secondAttribute="height" id="KHm-l7-8H7"/>
+                            <constraint firstItem="tRn-UJ-ZYv" firstAttribute="top" secondItem="kQC-fY-Euf" secondAttribute="bottom" constant="40" id="Lb4-X7-DQy"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="qyg-er-KzR" secondAttribute="trailing" constant="20" id="Q4s-Lk-7R4"/>
+                            <constraint firstItem="fd2-3L-8J3" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="ThB-nx-LT9"/>
+                            <constraint firstItem="qyg-er-KzR" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="aca-Pt-siA"/>
+                            <constraint firstItem="qyg-er-KzR" firstAttribute="top" secondItem="fd2-3L-8J3" secondAttribute="bottom" constant="53" id="ezx-EI-edt"/>
+                            <constraint firstItem="tRn-UJ-ZYv" firstAttribute="leading" secondItem="kQC-fY-Euf" secondAttribute="leading" id="ffz-w7-nc5"/>
+                            <constraint firstItem="kQC-fY-Euf" firstAttribute="trailing" secondItem="qyg-er-KzR" secondAttribute="trailing" id="g3W-2o-zNU"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="tRn-UJ-ZYv" secondAttribute="bottom" constant="20" id="jLS-yK-xAv"/>
+                            <constraint firstItem="tRn-UJ-ZYv" firstAttribute="height" secondItem="kQC-fY-Euf" secondAttribute="height" multiplier="1.25714" id="kly-fv-qA4"/>
+                            <constraint firstItem="tRn-UJ-ZYv" firstAttribute="trailing" secondItem="kQC-fY-Euf" secondAttribute="trailing" id="oNT-Af-AtO"/>
+                            <constraint firstItem="5ie-g7-83Z" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="rQk-kZ-BTN"/>
+                            <constraint firstItem="5ie-g7-83Z" firstAttribute="centerY" secondItem="RFY-xW-mc6" secondAttribute="centerY" id="suR-ao-8TS"/>
+                            <constraint firstItem="fd2-3L-8J3" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="wC7-5d-icv"/>
+                            <constraint firstItem="kQC-fY-Euf" firstAttribute="top" secondItem="qyg-er-KzR" secondAttribute="bottom" constant="40" id="xp4-Rq-jrl"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Item" id="QtX-Nm-h6l"/>
+                    <connections>
+                        <outlet property="barChart" destination="qyg-er-KzR" id="4Ec-cT-wWI"/>
+                        <outlet property="isOrderedSwitch" destination="5ie-g7-83Z" id="oam-de-scq"/>
+                        <outlet property="lineChart" destination="kQC-fY-Euf" id="bKK-Pa-gZm"/>
+                        <outlet property="optionSwitch" destination="fd2-3L-8J3" id="cCR-vo-wTo"/>
+                        <outlet property="stackedBarChart" destination="tRn-UJ-ZYv" id="CzB-d6-dz1"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-858" y="145"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
