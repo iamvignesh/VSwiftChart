@@ -5,8 +5,9 @@ Support
   3.Stacked bar chart
   4.Multi Level pie chart
   
-  ![Uploading ezgif-4-9d38be6b03.gif…]()
   
+  ![ezgif-4-9d38be6b03](https://user-images.githubusercontent.com/7777632/230381826-faee8945-fc60-48eb-ac1a-36d6523ded4a.gif)
+
   
   
 View can be added either in Storyboard or via code snoppet and Implement the datasource protocols to supply data for chart
